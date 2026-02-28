@@ -1,0 +1,173 @@
+:root {
+    --color-primario: #5F6F52;
+    --color-primario-suave: #F5F1E8;
+    --color-blanco: #f8f8f8;
+    --altura-header: 80px;
+    --padding-left-right: 2rem;
+    --ancho-maximo: 1200px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Ralewey', sans-serif;
+    // background-color: #333333;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ol,ul {
+    list-style: none;
+  }
+  
+  .header {
+  height: var(--altura-header);
+  background-color: var(--color-primario);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  }
+  
+  .navbar {
+  font-size: calc(.75rem + 0.10vw);
+  height: 100%;
+  display: flex;
+  width: min(1200px, 100% );
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /*position: relative;*/
+  padding: 0 var(--padding-left-right);
+  }
+  
+  .menu-hamburguesa {
+      display: none;
+  }
+  
+  .menu-hamburguesa:checked + .ul-links{
+      height:calc(100vh - var(--altura-header)) ;
+  }
+  
+  .logo{
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+  
+  .logo-pequeño svg{
+      display: none;
+  }
+  
+  .list-icon {
+  color: var(--color-blanco);
+  cursor: pointer;
+  }
+  
+  .li-links {
+      font-size: 0.7em;
+  }
+  
+  .ul-links {
+      width: 100%;
+      background-color: var(--color-primario-suave);
+      position: absolute;
+      top: var(--altura-header);
+      left: 0;
+      height: 0;
+      overflow: hidden;
+      /*height: calc(100vh - var(--altura-header));*/
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+  }
+  .ul-links li{
+    display: flex;
+  }
+
+  .ul-links .link {
+      color: var(--color-primario); /* enlaces en menú hamburguesa */
+      text-align: center;
+      display: flex;
+      align-items: center;
+    padding-right: 1rem!important;
+    padding-left: 1rem!important;
+  }
+  
+  .link {
+  font-size: 2em;
+  color: var(--color-blanco);
+   padding: 0.5rem 1rem;
+  /*font-weight: bold;*/
+  }
+  
+  
+  .logo-grande {
+  display: none; 
+  height: 30px;
+  width: auto;
+  color: var(--color-blanco)/* oculo el logo grande */
+  }
+  
+  .logo-pequeño {
+      display: block; /* muestro el logo pequeño */
+      height: 72px;   /* ajustar tamaño del logo */
+      width: auto;
+      color: var(--color-blanco)
+  }
+  
+  .main-content {
+    padding-top: var(--altura-header); /* para que la imagen o video empiece despues del menu */
+  }
+  
+  @media (min-width: 992px) {
+     .label-hamburguesa {
+      display: none;
+     }
+     .ul-links {
+      position: static;
+      width: auto;
+      height: auto;
+      flex-direction: row;
+      gap: 1rem;
+      background-color: transparent;
+     }
+     .link {
+      transition:all 0.3s;
+      padding: 0.2rem 0.7rem;
+     }
+  
+     .ul-links .link {
+         color: var(--color-blanco); 
+         padding: 0.2rem 0.7rem;
+         transition: all 0.3s;
+     }
+  
+      .link:hover {
+      background-color: #526047; 
+       color: var(--color-blanco);
+     }
+  }
+  
+  
+  
+  @media (min-width: 1200px) {
+      .logo-grande {
+          display: block; /* mostramos el grande */
+          height: 30px;   /* tamaño del logo grande */
+          width: auto;
+      }
+  
+      .logo-pequeño {
+          display: none; /* ocultamos el pequeño */
+      }
+  }

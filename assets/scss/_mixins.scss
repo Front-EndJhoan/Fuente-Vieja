@@ -1,0 +1,28 @@
+// Breakpoints propios inspirados en Bootstrap
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Mixin: desde un breakpoint hacia arriba
+@mixin from($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+// (Opcional) Mixin: solo ese breakpoint
+@mixin only($bp) {
+  $min: map-get($breakpoints, $bp);
+  $keys: map-keys($breakpoints);
+  $index: index($keys, $bp);
+  $next: if($index < length($keys), nth($keys, $index + 1), null);
+  $max: if($next, map-get($breakpoints, $next) - 0.02px, null);
+
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

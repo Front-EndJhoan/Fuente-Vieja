@@ -1,0 +1,229 @@
+@use "mixins" as m;
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background:hsl(42, 39%, 94%);
+  color: var(--oliva);
+  scroll-margin-top: 3em;
+}
+.contact-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-semibold);
+
+      p{
+        font-size: var(--fs-p-a) !important;
+        font-weight: var(--fw-regular) !important;
+      }
+    }
+}
+
+.contact-flex{
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-form{
+  width: 700px;
+  gap: 1em;
+}
+.form-container{
+  max-width: 700px;
+  background: #ffffff7c transparent;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.form-container .text{
+  text-align: center;
+  color: var(--oliva);
+}
+
+.form-container .form-row{
+  display: flex;
+  margin: 32px 0;
+}
+form .form-row .input-data{
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .form-row .textarea{
+  height: 70px;
+}
+.input-data input,
+.textarea textarea{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid var(--oliva);
+  background: rgba(255, 255, 255, 0.541);
+}
+.input-data input:focus ~ label, .textarea textarea:focus ~ label,
+.input-data input:valid ~ label, .textarea textarea:valid ~ label{
+  transform: translateY(-30px);
+  color: var(--oliva);
+}
+.textarea textarea{
+  resize: none;
+  padding-top: 10px;
+}
+.input-data label{
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.textarea label{
+  bottom: 40px;
+}
+.input-data .underline{
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--oliva);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before{
+  transform: scale(1);
+}
+
+.contact-container{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+
+  h3{
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-medium);
+  }
+
+}
+
+.info a{
+    color: var(--oliva);
+}
+
+.contact-info-container{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+
+.titulo{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titulo h4{
+  margin: 0;
+}
+
+.icono{
+  width: 1em;
+}
+
+// --- Mobile --- //
+
+@media (max-width: 768px) {
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-inline: 2em;
+    height: auto;
+  }
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+}
+.contact-text{
+  padding-inline: 1em;
+}
+
+    @include m.from(lg) {
+
+  }
+
+@media (max-width: 992px) {
+  .contact-flex {
+    flex-direction: column-reverse;
+    gap: 3em;
+  }
+
+  .phone-email-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+
+  .form-container{
+  margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px){
+  .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-text{
+    padding-inline: 1em;
+    text-align: center;
+  }
+
+  .contact-info{
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .titulo{
+    justify-content: center;
+  }
+
+}
+
+    @include m.from(lg) {
+
+  }
+
+
+
+  
+
+
+
+  
+

@@ -1,0 +1,107 @@
+@use "mixins" as m;
+
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.slide-1, .slide-2, .slide-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  gap: 1.5em;
+}
+
+.slide-text{
+  max-width: 620px;
+  line-height: 2;
+
+  h3{
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-medium);
+  }
+
+  p{
+    font-size: var(--f-p-a);
+    font-weight: var(--fw-regular);
+  }
+}
+  
+.slide-img {
+    max-width: 80%;
+  }
+
+h2{
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+}
+
+.products{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background: hsl(93, 15%, 38%);;
+  color: hsl(0, 0%, 100%);
+  scroll-margin-top: 3em;
+  margin-bottom: 3em;
+  padding-block: 2em;
+}
+
+.carousel-slide{
+  max-height: 450px !important;
+}
+.carousel-control-prev{
+  width: initial;
+  top: 150px !important;
+  left: 100px;
+}
+
+.carousel-control-next{
+  width: initial;
+  top: 150px !important;
+  right: 100px;
+}
+
+@media (max-width: 992px) {
+  .carousel-control-prev{
+  left: 5px !important;
+}  
+
+.carousel-control-next{
+  right: 5px !important;
+}
+  
+  }
+  
+@include m.from(lg) {
+  
+}
+
+// // @media (min-width: 576px) {
+// //   .carousel-control-prev{
+// //   top: 180px !important;
+// // }  
+
+// // .carousel-control-next{
+// //   top: 180px !important;
+// // }
+
+
+// // .slide-text p{
+// //   max-width: 75%;
+// //   text-align: center;
+// // }
+  
+
+//   }
+  
+@include m.from(sm) {
+  
+}
+

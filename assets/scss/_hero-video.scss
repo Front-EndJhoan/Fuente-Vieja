@@ -1,0 +1,87 @@
+@use "mixins" as m;
+
+.hero{
+    background-color: var(--white);
+   
+    overflow: hidden;
+        video {
+        width: 100vw;
+        object-fit: cover;
+        height: 100vh;
+        display: block;
+        }
+        .wrapper-video::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4); 
+                z-index: 2;
+                
+            } 
+        
+        .hero-content {
+        z-index: 10;
+        color: var(--white);
+        padding: 0 1.5rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        .hero h1 {
+            font-size: var(--fs-h1);
+            font-weight: var(--fw-regular);
+          } 
+    
+
+        }
+        .hero-logo {
+        width: 120px;
+        margin: 0 auto 1.5rem;
+        filter: brightness(0) invert(1); 
+        }
+    
+        .hero-subtitle {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: var(--fs-p-a);
+       }
+       .btn {
+        border-radius: 0.5rem;
+        transition: all .3s ease;
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        display: inline-block;
+        text-decoration: none;
+        }
+       
+       .hero-buttons {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+       }
+        .btn-primary {
+        background-color: var(--oliva);
+        color: var(--white);
+        border-color: var(--oliva);
+        }
+        .btn-secondary {
+        color: var(--white);
+        border: 2px solid var(--oliva);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.1019607843);
+        }
+        .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+        }
+
+}
+
+//     @include m.from(lg) {
+
+//   }
